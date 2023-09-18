@@ -1,6 +1,7 @@
 import { useStarredShows } from '../../Lib/useStarredShows';
 import ShowCard from './ShowCard';
 import { FlexGrid } from '../common/FlexGrid';
+import NotFoundImgSrc from '../../Lib/not found.png';
 
 const ShowGrid = ({ shows }) => {
   const [starredShows, dispatchStarred] = useStarredShows();
@@ -22,7 +23,7 @@ const ShowGrid = ({ shows }) => {
           key={data.show.id}
           id={data.show.id}
           name={data.show.name}
-          image={data.show.image ? data.show.image.medium : '/not found.png'}
+          image={data.show.image ? data.show.image.medium : NotFoundImgSrc}
           summary={data.show.summary}
           onStarMeClick={onStarMeClick}
           isStarred={starredShows.includes(data.show.id)}
